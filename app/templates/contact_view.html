@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+		<h1>View Contact single entry.</h1>
+		<table>
+				<tr>
+					<td>Contact_Name:</td>
+					<td>{{ contact_item.contact_name }}</td>
+				</tr>
+				<tr>
+					<td>Contact_Email:</td>
+					<td>{{ contact_item.contact_email }}</td>
+				</tr>
+				<tr>
+					<td>Message:</td>
+					<td>{{ contact_item.message }}</td>
+				</tr>
+		</table>
+{% endblock %}

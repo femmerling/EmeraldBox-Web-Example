@@ -1,0 +1,4 @@
+./box.py -i home
+./box.py -i about
+./box.py -n contact contact_name:string contact_email:string message:text
+./box.py -m

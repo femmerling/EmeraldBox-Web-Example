@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+		<h1>List of Contact Entries.</h1>
+		<table id="list-view">
+			<thead>
+				<tr>
+					<td><b>ID</td>
+					<td><b>Contact_Name</b></td>
+					<td><b>Contact_Email</b></td>
+					<td><b>Message</b></td>
+					<td><b> </td>
+					<td><b> </td>
+				</tr>
+			</thead>
+			{% if contact_entries %}
+			<tbody>
+			{% for entry in contact_entries %}
+				<tr>
+					<td>{{ entry.id }}</td>
+					<td>{{ entry.contact_name }}</td>
+					<td>{{ entry.contact_email }}</td>
+					<td>{{ entry.message }}</td>
+					<td><a href="/contact/edit/{{ entry.contact_id }}">Edit</a></td>
+					<td><a href="/contact/delete/{{ entry.contact_id }}">Delete</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+			{% else %}
+		</table>
+		You have no entries yet
+			{% endif %}
+			<br/><br/><b><a id="actions" href="/contact/add">Add new entry</a></b>
+{% endblock %}
